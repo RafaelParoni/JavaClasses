@@ -1,42 +1,54 @@
 public class UsuarioSet {
     private String nome;
     private String sobrenome;
+    private String email;
     private String cep;
     private String endereco;
     private String cidade;
     private String estado;
+    private String password;
     private int pessoasNaCasa;
 
-    public void Nome(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void Sobrenome(String sobrenome) {
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setSobrenome(String sobrenome) {
         this.sobrenome = sobrenome;
     }
 
-    public void Cep(String cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 
-    public void Endereco(String endereco) {
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 
-    public void Cidade(String cidade) {
+    public void setCidade(String cidade) {
         this.cidade = cidade;
     }
 
-    public void Estado(String estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    public void PessoasNaCasa(int pessoasNaCasa) {
+    public void setPessoasNaCasa(int pessoasNaCasa) {
         this.pessoasNaCasa = pessoasNaCasa;
     }
 
-    // Método para transferir dados para um UsuarioGet
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    // Método para transferir dados para um UsuarioGet e salvar no bd
     public UsuarioGet gerarUsuarioGet() {
-        return new UsuarioGet(nome, sobrenome, cep, endereco, cidade, estado, pessoasNaCasa);
+        return new UsuarioGet(nome, email, sobrenome, cep, endereco, cidade, estado, pessoasNaCasa, password);
+    
+        // SALVAR NO BANCO DE DADOS
     }
 }
